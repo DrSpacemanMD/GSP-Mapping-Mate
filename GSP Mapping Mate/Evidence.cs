@@ -28,5 +28,17 @@ namespace GSP_Mapping_Mate
             formatter.Serialize(stream, this);
             stream.Close();
         }
+
+        public int HowManyCompetenciesMapped()
+        {
+            int count = 0;
+            foreach (KeyValuePair<string, List<string>> entry in CompDict)
+            {
+                count++;
+                count += entry.Value.Count;
+            }
+
+            return count;
+        }
     }
 }

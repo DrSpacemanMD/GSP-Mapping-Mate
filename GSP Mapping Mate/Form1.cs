@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Policy;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -31,6 +32,12 @@ namespace GSP_Mapping_Mate
 
                 CompViewer.Columns.Add("Col1", "Name");
                 CompAssinged.Columns.Add("Col1", "Name");
+                MissingComp.Columns.Add("Col1", "Name");
+
+                EvLeaderBoard.Columns.Add("Col1", "Evidence Title");
+                EvLeaderBoard.Columns.Add("Col2", "Comptencies Mapped");
+                EvLeaderBoard.ColumnHeadersVisible = true;
+
                 SelectedComp.Text = "X.X.X";
 
                 CompViewer.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
@@ -40,6 +47,8 @@ namespace GSP_Mapping_Mate
                 CompAssinged.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 CompAssinged.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 CompAssinged.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+                
 
                 XmlDocument doc = new XmlDocument();
                 doc.Load("GSPComps.xml");
@@ -489,6 +498,111 @@ namespace GSP_Mapping_Mate
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void ScanForMissing_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MissingComp.Rows.Clear();
+                EvLeaderBoard.Rows.Clear();
+                //MissingComp.Rows.Add("1.1.1" + " " + CompDict["1.1.1"].RootComp);
+                foreach (var item in CompDict.Keys)
+                {
+                    MissingComp.Rows.Add(item + " " + CompDict[item].RootComp);
+                    int count = 0;
+                    foreach (string ChildComp in CompDict[item].ChildComps)
+                    {
+                        MissingComp.Rows.Add("         (" + alphabet[count] + ") " + ChildComp);
+                        count++;
+                    }
+                }
+
+                int idx1 = 0;
+                foreach (DataGridViewRow row1 in MissingComp.Rows)
+                {
+                    int idx2 = 0;
+                    foreach (DataGridViewRow row2 in MissingComp.Rows)
+                    {
+                        
+                        if (row1.Cells[0].Value.ToString() == row2.Cells[0].Value.ToString() && idx1 != idx2)
+                        {
+                            MissingComp.Rows.Clear();
+                            throw new Exception("Error: Non distinct value found, if the competencies are correct please report this error!");
+                        }
+                        idx2++;
+                    }
+                    idx1++;
+                }
+
+                List<Evidence> EvList = new List<Evidence>();
+
+                DirectoryInfo dinfo = new DirectoryInfo(@"EvidenceDatabase");
+                FileInfo[] Files = dinfo.GetFiles("*.bin");
+                List<String> CompMatched = new List<string>();
+                foreach (FileInfo file in Files)
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    Stream stream = new FileStream(file.FullName, FileMode.Open, FileAccess.Read);
+                    Evidence Evidence = (Evidence)formatter.Deserialize(stream);
+                    EvList.Add(Evidence);
+
+
+                    foreach (var RootComp in Evidence.CompDict.Keys)
+                    {
+                        CompMatched.Add(RootComp);
+                        foreach (var Comp in Evidence.CompDict[RootComp])
+                            CompMatched.Add(Comp);
+                    }
+                    stream.Close();
+                }
+
+                List<int> RemovedIndex = new List<int>();
+                foreach (string Str in CompMatched)
+                {
+                    int count = 0;
+                    foreach (DataGridViewRow row in MissingComp.Rows)
+                    {
+                        if (Str == row.Cells[0].Value.ToString())
+                        {
+                            RemovedIndex.Add(row.Cells[0].RowIndex);
+                        }  
+                    }
+                    if (count > 1)
+                    {
+                        MissingComp.Rows.Clear();
+                        throw new Exception("Error: Duplicate found in scan, missing competencies list will be incorrect!");
+                    }
+
+                }
+                RemovedIndex = RemovedIndex.Distinct().ToList();
+                RemovedIndex.Reverse();
+                foreach (int i in RemovedIndex)
+                {
+                    MissingComp.Rows.RemoveAt(i);
+                }
+
+                MappedComp.Text = "Mapped Comptencies Count : " + RemovedIndex.Count.ToString();
+                MissingCompStat.Text = "Missing Comptencies Count : " + MissingComp.Rows.Count.ToString();
+
+
+                foreach (Evidence Ev in EvList)
+                {
+                    this.EvLeaderBoard.Rows.Add(Ev.Name, Ev.HowManyCompetenciesMapped());
+                }
+                this.EvLeaderBoard.Sort(this.EvLeaderBoard.Columns["Col2"], ListSortDirection.Descending);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LatexTable_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming Soon");
         }
     }
 }

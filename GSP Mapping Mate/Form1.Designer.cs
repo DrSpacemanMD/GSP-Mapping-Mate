@@ -51,13 +51,22 @@
             this.EvDesc = new System.Windows.Forms.TextBox();
             this.EvName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.EvLeaderBoard = new System.Windows.Forms.DataGridView();
+            this.MappedComp = new System.Windows.Forms.Label();
+            this.MissingCompStat = new System.Windows.Forms.Label();
+            this.ScanForMissing = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.MissingComp = new System.Windows.Forms.DataGridView();
+            this.LatexTable = new System.Windows.Forms.Button();
             this.Tabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EvidenceGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompAssinged)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompViewer)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EvLeaderBoard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissingComp)).BeginInit();
             this.SuspendLayout();
             // 
             // Tabs
@@ -327,7 +336,14 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.LatexTable);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.EvLeaderBoard);
+            this.tabPage2.Controls.Add(this.MappedComp);
+            this.tabPage2.Controls.Add(this.MissingCompStat);
+            this.tabPage2.Controls.Add(this.ScanForMissing);
             this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.MissingComp);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -336,15 +352,109 @@
             this.tabPage2.Text = "Competency Explorer";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1360, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(186, 25);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Evidence Leaderboard";
+            // 
+            // EvLeaderBoard
+            // 
+            this.EvLeaderBoard.AllowUserToAddRows = false;
+            this.EvLeaderBoard.AllowUserToDeleteRows = false;
+            this.EvLeaderBoard.AllowUserToResizeColumns = false;
+            this.EvLeaderBoard.AllowUserToResizeRows = false;
+            this.EvLeaderBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EvLeaderBoard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.EvLeaderBoard.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.EvLeaderBoard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EvLeaderBoard.ColumnHeadersVisible = false;
+            this.EvLeaderBoard.Location = new System.Drawing.Point(1360, 92);
+            this.EvLeaderBoard.Name = "EvLeaderBoard";
+            this.EvLeaderBoard.ReadOnly = true;
+            this.EvLeaderBoard.RowHeadersVisible = false;
+            this.EvLeaderBoard.RowHeadersWidth = 62;
+            this.EvLeaderBoard.RowTemplate.Height = 33;
+            this.EvLeaderBoard.Size = new System.Drawing.Size(917, 401);
+            this.EvLeaderBoard.TabIndex = 26;
+            // 
+            // MappedComp
+            // 
+            this.MappedComp.AutoSize = true;
+            this.MappedComp.Location = new System.Drawing.Point(26, 513);
+            this.MappedComp.Name = "MappedComp";
+            this.MappedComp.Size = new System.Drawing.Size(254, 25);
+            this.MappedComp.TabIndex = 25;
+            this.MappedComp.Text = "Mapped Comptencies Count : ";
+            this.MappedComp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // MissingCompStat
+            // 
+            this.MissingCompStat.AutoSize = true;
+            this.MissingCompStat.Location = new System.Drawing.Point(587, 513);
+            this.MissingCompStat.Name = "MissingCompStat";
+            this.MissingCompStat.Size = new System.Drawing.Size(248, 25);
+            this.MissingCompStat.TabIndex = 24;
+            this.MissingCompStat.Text = "Missing Comptencies Count : ";
+            this.MissingCompStat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ScanForMissing
+            // 
+            this.ScanForMissing.Location = new System.Drawing.Point(1019, 92);
+            this.ScanForMissing.Name = "ScanForMissing";
+            this.ScanForMissing.Size = new System.Drawing.Size(237, 34);
+            this.ScanForMissing.TabIndex = 23;
+            this.ScanForMissing.Text = "Scan";
+            this.ScanForMissing.UseVisualStyleBackColor = true;
+            this.ScanForMissing.Click += new System.EventHandler(this.ScanForMissing_Click);
+            // 
             // label4
             // 
+            this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1005, 560);
+            this.label4.Location = new System.Drawing.Point(17, 64);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Coming Soon";
-            //this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.Size = new System.Drawing.Size(190, 25);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Missing Competencies";
+            // 
+            // MissingComp
+            // 
+            this.MissingComp.AllowUserToAddRows = false;
+            this.MissingComp.AllowUserToDeleteRows = false;
+            this.MissingComp.AllowUserToResizeColumns = false;
+            this.MissingComp.AllowUserToResizeRows = false;
+            this.MissingComp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MissingComp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MissingComp.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.MissingComp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MissingComp.ColumnHeadersVisible = false;
+            this.MissingComp.Location = new System.Drawing.Point(17, 92);
+            this.MissingComp.Name = "MissingComp";
+            this.MissingComp.ReadOnly = true;
+            this.MissingComp.RowHeadersVisible = false;
+            this.MissingComp.RowHeadersWidth = 62;
+            this.MissingComp.RowTemplate.Height = 33;
+            this.MissingComp.Size = new System.Drawing.Size(917, 401);
+            this.MissingComp.TabIndex = 21;
+            // 
+            // LatexTable
+            // 
+            this.LatexTable.Location = new System.Drawing.Point(1029, 459);
+            this.LatexTable.Name = "LatexTable";
+            this.LatexTable.Size = new System.Drawing.Size(237, 34);
+            this.LatexTable.TabIndex = 28;
+            this.LatexTable.Text = "Build Latex Table ";
+            this.LatexTable.UseVisualStyleBackColor = true;
+            this.LatexTable.Click += new System.EventHandler(this.LatexTable_Click);
             // 
             // Form1
             // 
@@ -363,6 +473,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CompViewer)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EvLeaderBoard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissingComp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +505,12 @@
         private Button RefreshData;
         private DataGridView EvidenceGrid;
         private Label label4;
+        private DataGridView MissingComp;
+        private Button ScanForMissing;
+        private Label MappedComp;
+        private Label MissingCompStat;
+        private Label label5;
+        private DataGridView EvLeaderBoard;
+        private Button LatexTable;
     }
 }
