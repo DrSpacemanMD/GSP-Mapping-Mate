@@ -1,0 +1,92 @@
+<GSPDomains>
+	<Domain>
+		<name>Domain 1: Professional Practice</name>
+		<id>1</id>
+
+		<subdomain>
+			<name>Patient centred care</name>
+			<id>1</id>
+		</subdomain>
+
+		<subdomain>
+			<name>Scope of practice</name>
+			<id>2</id>
+		</subdomain>
+
+		<subdomain>
+			<name>Communications</name>
+			<id>3</id>
+		</subdomain>
+
+		<subdomain>
+			<name>Professional responsibilities</name>
+			<id>4</id>
+		</subdomain>
+
+		<subdomain>
+			<name>Working with others</name>
+			<id>5</id>
+		</subdomain>
+	</Domain>
+
+	<Domain>
+		<name>Domain 2: Scientific practice</name>
+		<id>2</id>
+
+		<subdomain>
+			<name>Data and reporting</name>
+			<id>1</id>
+		</subdomain>
+		<subdomain>
+			<name>Technical proficiency</name>
+			<id>2</id>
+		</subdomain>
+		<subdomain>
+			<name>Quality assurance</name>
+			<id>3</id>
+		</subdomain>
+	</Domain>
+
+	<Domain>
+		<name>Domain 3: Clinical practice</name>
+		<id>3</id>
+
+		<subdomain>
+			<name>Clinical activity</name>
+			<id>1</id>
+		</subdomain>
+		<subdomain>
+			<name>Clinical investigation and therapeutics </name>
+			<id>2</id>
+		</subdomain>
+	</Domain>
+
+	<Domain>
+		<name>Domain 4: Research, Development and Innovation</name>
+		<id>4</id>
+
+		<subdomain>
+			<name>Research activity</name>
+			<id>1</id>
+		</subdomain>
+		<subdomain>
+			<name>Service development</name>
+			<id>2</id>
+		</subdomain>
+	</Domain>
+
+	<Domain>
+		<name>Domain 5: Clinical Leadership</name>
+		<id>5</id>
+
+		<subdomain>
+			<name>Developing of self</name>
+			<id>1</id>
+		</subdomain>
+		<subdomain>
+			<name>Leading others </name>
+			<id>2</id>
+		</subdomain>
+	</Domain>
+
+</GSPDomains>

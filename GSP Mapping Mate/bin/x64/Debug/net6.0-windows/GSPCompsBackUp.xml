@@ -1,0 +1,21 @@
+<GSPComps>
+	<Comp>
+		<id>1.1.1</id>
+		<RootComp>You put patients first and do the following:</RootComp>
+		<ChildComp>Act in the interests of patients’ safety and well being at all times.</ChildComp>
+		<ChildComp>Fulfil your duty of care if you have a concern about a patient’s safety.</ChildComp>
+		<ChildComp>Fulfil your duty of candour if something goes wrong in a patient’s care.</ChildComp>
+		<ChildComp>Adhere to safeguarding requirements and uphold the interests of vulnerable individuals in how you deliver care.</ChildComp>
+	</Comp>
+
+	<Comp>
+		<id>1.1.2</id>
+		<RootComp>You derp</RootComp>
+	</Comp>
+
+	<Comp>
+		<id>2.1.1</id>
+		<RootComp>You Merp</RootComp>
+		<ChildComp>And Flerp</ChildComp>
+	</Comp>
+</GSPComps>

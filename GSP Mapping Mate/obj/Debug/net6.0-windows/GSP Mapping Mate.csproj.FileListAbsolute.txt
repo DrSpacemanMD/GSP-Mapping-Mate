@@ -1,0 +1,17 @@
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\bin\Debug\net6.0-windows\GSP Mapping Mate.exe
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\bin\Debug\net6.0-windows\GSP Mapping Mate.deps.json
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\bin\Debug\net6.0-windows\GSP Mapping Mate.runtimeconfig.json
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\bin\Debug\net6.0-windows\GSP Mapping Mate.dll
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\bin\Debug\net6.0-windows\GSP Mapping Mate.pdb
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP Mapping Mate.csproj.AssemblyReference.cache
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP_Mapping_Mate.Form1.resources
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP Mapping Mate.csproj.GenerateResource.cache
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP Mapping Mate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP Mapping Mate.AssemblyInfoInputs.cache
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP Mapping Mate.AssemblyInfo.cs
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP Mapping Mate.csproj.CoreCompileInputs.cache
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP Mapping Mate.dll
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\refint\GSP Mapping Mate.dll
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP Mapping Mate.pdb
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\GSP Mapping Mate.genruntimeconfig.cache
+C:\Users\Johnt\source\repos\GSP Mapping Mate\GSP Mapping Mate\obj\Debug\net6.0-windows\ref\GSP Mapping Mate.dll
