@@ -41,14 +41,18 @@ namespace GSP_Mapping_Mate
                 SelectedComp.Text = "X.X.X";
 
                 CompViewer.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                CompViewer.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                CompViewer.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 CompViewer.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
                 CompAssinged.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                CompAssinged.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                CompAssinged.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                CompAssinged.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
                 CompAssinged.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-                
+
+
+
 
                 XmlDocument doc = new XmlDocument();
                 doc.Load("GSPComps.xml");

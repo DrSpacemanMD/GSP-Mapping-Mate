@@ -51,6 +51,7 @@
             this.EvDesc = new System.Windows.Forms.TextBox();
             this.EvName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.LatexTable = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.EvLeaderBoard = new System.Windows.Forms.DataGridView();
             this.MappedComp = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.ScanForMissing = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.MissingComp = new System.Windows.Forms.DataGridView();
-            this.LatexTable = new System.Windows.Forms.Button();
             this.Tabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EvidenceGrid)).BeginInit();
@@ -77,7 +77,7 @@
             this.Tabs.Location = new System.Drawing.Point(0, 0);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
-            this.Tabs.Size = new System.Drawing.Size(2325, 1332);
+            this.Tabs.Size = new System.Drawing.Size(2564, 1072);
             this.Tabs.TabIndex = 0;
             // 
             // tabPage1
@@ -105,16 +105,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(2317, 1294);
+            this.tabPage1.Size = new System.Drawing.Size(2556, 1034);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Evidence Explorer";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // RefreshData
             // 
-            this.RefreshData.Location = new System.Drawing.Point(803, 932);
+            this.RefreshData.Location = new System.Drawing.Point(885, 771);
             this.RefreshData.Name = "RefreshData";
-            this.RefreshData.Size = new System.Drawing.Size(154, 34);
+            this.RefreshData.Size = new System.Drawing.Size(170, 44);
             this.RefreshData.TabIndex = 23;
             this.RefreshData.Text = "Refresh";
             this.RefreshData.UseVisualStyleBackColor = true;
@@ -130,20 +130,20 @@
             this.EvidenceGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EvidenceGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.EvidenceGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EvidenceGrid.Location = new System.Drawing.Point(21, 892);
+            this.EvidenceGrid.Location = new System.Drawing.Point(22, 722);
             this.EvidenceGrid.MultiSelect = false;
             this.EvidenceGrid.Name = "EvidenceGrid";
             this.EvidenceGrid.ReadOnly = true;
             this.EvidenceGrid.RowHeadersVisible = false;
             this.EvidenceGrid.RowHeadersWidth = 62;
             this.EvidenceGrid.RowTemplate.Height = 33;
-            this.EvidenceGrid.Size = new System.Drawing.Size(776, 329);
+            this.EvidenceGrid.Size = new System.Drawing.Size(855, 267);
             this.EvidenceGrid.TabIndex = 22;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1076, 601);
+            this.label3.Location = new System.Drawing.Point(1182, 484);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(202, 25);
             this.label3.TabIndex = 21;
@@ -162,19 +162,19 @@
             this.CompAssinged.BackgroundColor = System.Drawing.SystemColors.Window;
             this.CompAssinged.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CompAssinged.ColumnHeadersVisible = false;
-            this.CompAssinged.Location = new System.Drawing.Point(1073, 629);
+            this.CompAssinged.Location = new System.Drawing.Point(1182, 510);
             this.CompAssinged.Name = "CompAssinged";
             this.CompAssinged.ReadOnly = true;
             this.CompAssinged.RowHeadersVisible = false;
             this.CompAssinged.RowHeadersWidth = 62;
             this.CompAssinged.RowTemplate.Height = 33;
-            this.CompAssinged.Size = new System.Drawing.Size(952, 401);
+            this.CompAssinged.Size = new System.Drawing.Size(1048, 417);
             this.CompAssinged.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 718);
+            this.label2.Location = new System.Drawing.Point(22, 567);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 25);
             this.label2.TabIndex = 19;
@@ -183,7 +183,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1073, 86);
+            this.label1.Location = new System.Drawing.Point(1182, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 25);
             this.label1.TabIndex = 18;
@@ -191,10 +191,10 @@
             // 
             // SelectedComp
             // 
-            this.SelectedComp.Location = new System.Drawing.Point(1267, 84);
+            this.SelectedComp.Location = new System.Drawing.Point(1396, 68);
             this.SelectedComp.Name = "SelectedComp";
             this.SelectedComp.ReadOnly = true;
-            this.SelectedComp.Size = new System.Drawing.Size(150, 31);
+            this.SelectedComp.Size = new System.Drawing.Size(164, 31);
             this.SelectedComp.TabIndex = 17;
             // 
             // CompViewer
@@ -210,20 +210,20 @@
             this.CompViewer.BackgroundColor = System.Drawing.SystemColors.Window;
             this.CompViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CompViewer.ColumnHeadersVisible = false;
-            this.CompViewer.Location = new System.Drawing.Point(1073, 121);
+            this.CompViewer.Location = new System.Drawing.Point(1182, 110);
             this.CompViewer.Name = "CompViewer";
             this.CompViewer.ReadOnly = true;
             this.CompViewer.RowHeadersVisible = false;
             this.CompViewer.RowHeadersWidth = 62;
             this.CompViewer.RowTemplate.Height = 33;
-            this.CompViewer.Size = new System.Drawing.Size(952, 225);
+            this.CompViewer.Size = new System.Drawing.Size(1048, 303);
             this.CompViewer.TabIndex = 16;
             // 
             // RemoveComp
             // 
-            this.RemoveComp.Location = new System.Drawing.Point(1073, 1047);
+            this.RemoveComp.Location = new System.Drawing.Point(1182, 945);
             this.RemoveComp.Name = "RemoveComp";
-            this.RemoveComp.Size = new System.Drawing.Size(241, 34);
+            this.RemoveComp.Size = new System.Drawing.Size(267, 44);
             this.RemoveComp.TabIndex = 15;
             this.RemoveComp.Text = "Remove Competency";
             this.RemoveComp.UseVisualStyleBackColor = true;
@@ -231,9 +231,9 @@
             // 
             // LoadEv
             // 
-            this.LoadEv.Location = new System.Drawing.Point(803, 892);
+            this.LoadEv.Location = new System.Drawing.Point(885, 722);
             this.LoadEv.Name = "LoadEv";
-            this.LoadEv.Size = new System.Drawing.Size(154, 34);
+            this.LoadEv.Size = new System.Drawing.Size(170, 44);
             this.LoadEv.TabIndex = 12;
             this.LoadEv.Text = "Load Evidence";
             this.LoadEv.UseVisualStyleBackColor = true;
@@ -241,9 +241,9 @@
             // 
             // SaveEv
             // 
-            this.SaveEv.Location = new System.Drawing.Point(406, 56);
+            this.SaveEv.Location = new System.Drawing.Point(447, 46);
             this.SaveEv.Name = "SaveEv";
-            this.SaveEv.Size = new System.Drawing.Size(154, 34);
+            this.SaveEv.Size = new System.Drawing.Size(170, 34);
             this.SaveEv.TabIndex = 11;
             this.SaveEv.Text = "Save Evidence";
             this.SaveEv.UseVisualStyleBackColor = true;
@@ -251,9 +251,9 @@
             // 
             // AddComp
             // 
-            this.AddComp.Location = new System.Drawing.Point(1073, 352);
+            this.AddComp.Location = new System.Drawing.Point(1182, 419);
             this.AddComp.Name = "AddComp";
-            this.AddComp.Size = new System.Drawing.Size(207, 34);
+            this.AddComp.Size = new System.Drawing.Size(230, 44);
             this.AddComp.TabIndex = 10;
             this.AddComp.Text = "Add Competency";
             this.AddComp.UseVisualStyleBackColor = true;
@@ -261,9 +261,9 @@
             // 
             // OpenFile
             // 
-            this.OpenFile.Location = new System.Drawing.Point(168, 805);
+            this.OpenFile.Location = new System.Drawing.Point(186, 651);
             this.OpenFile.Name = "OpenFile";
-            this.OpenFile.Size = new System.Drawing.Size(112, 34);
+            this.OpenFile.Size = new System.Drawing.Size(123, 42);
             this.OpenFile.TabIndex = 9;
             this.OpenFile.Text = "Open File";
             this.OpenFile.UseVisualStyleBackColor = true;
@@ -271,9 +271,9 @@
             // 
             // ChooseFile
             // 
-            this.ChooseFile.Location = new System.Drawing.Point(21, 805);
+            this.ChooseFile.Location = new System.Drawing.Point(22, 651);
             this.ChooseFile.Name = "ChooseFile";
-            this.ChooseFile.Size = new System.Drawing.Size(112, 34);
+            this.ChooseFile.Size = new System.Drawing.Size(123, 42);
             this.ChooseFile.TabIndex = 8;
             this.ChooseFile.Text = "Choose File";
             this.ChooseFile.UseVisualStyleBackColor = true;
@@ -281,19 +281,19 @@
             // 
             // FileName
             // 
-            this.FileName.Location = new System.Drawing.Point(21, 747);
+            this.FileName.Location = new System.Drawing.Point(22, 604);
             this.FileName.Name = "FileName";
             this.FileName.ReadOnly = true;
-            this.FileName.Size = new System.Drawing.Size(1006, 31);
+            this.FileName.Size = new System.Drawing.Size(1108, 31);
             this.FileName.TabIndex = 7;
             // 
             // Domain3
             // 
             this.Domain3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Domain3.FormattingEnabled = true;
-            this.Domain3.Location = new System.Drawing.Point(1916, 43);
+            this.Domain3.Location = new System.Drawing.Point(2112, 21);
             this.Domain3.Name = "Domain3";
-            this.Domain3.Size = new System.Drawing.Size(109, 33);
+            this.Domain3.Size = new System.Drawing.Size(121, 33);
             this.Domain3.TabIndex = 5;
             this.Domain3.SelectedIndexChanged += new System.EventHandler(this.Domain3_SelectedIndexChanged);
             // 
@@ -301,9 +301,9 @@
             // 
             this.SubDomainCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SubDomainCombo.FormattingEnabled = true;
-            this.SubDomainCombo.Location = new System.Drawing.Point(1549, 43);
+            this.SubDomainCombo.Location = new System.Drawing.Point(1707, 21);
             this.SubDomainCombo.Name = "SubDomainCombo";
-            this.SubDomainCombo.Size = new System.Drawing.Size(348, 33);
+            this.SubDomainCombo.Size = new System.Drawing.Size(384, 33);
             this.SubDomainCombo.TabIndex = 4;
             this.SubDomainCombo.SelectedIndexChanged += new System.EventHandler(this.SubDomainCombo_SelectedIndexChanged);
             // 
@@ -311,27 +311,27 @@
             // 
             this.DomainCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DomainCombo.FormattingEnabled = true;
-            this.DomainCombo.Location = new System.Drawing.Point(1073, 43);
+            this.DomainCombo.Location = new System.Drawing.Point(1182, 21);
             this.DomainCombo.Name = "DomainCombo";
-            this.DomainCombo.Size = new System.Drawing.Size(445, 33);
+            this.DomainCombo.Size = new System.Drawing.Size(492, 33);
             this.DomainCombo.TabIndex = 3;
             this.DomainCombo.SelectedIndexChanged += new System.EventHandler(this.DomainCombo_SelectedIndexChanged);
             // 
             // EvDesc
             // 
-            this.EvDesc.Location = new System.Drawing.Point(21, 103);
+            this.EvDesc.Location = new System.Drawing.Point(22, 84);
             this.EvDesc.Multiline = true;
             this.EvDesc.Name = "EvDesc";
             this.EvDesc.PlaceholderText = "Evidence Descriptions and Comments";
-            this.EvDesc.Size = new System.Drawing.Size(1006, 562);
+            this.EvDesc.Size = new System.Drawing.Size(1108, 456);
             this.EvDesc.TabIndex = 1;
             // 
             // EvName
             // 
-            this.EvName.Location = new System.Drawing.Point(21, 56);
+            this.EvName.Location = new System.Drawing.Point(22, 46);
             this.EvName.Name = "EvName";
             this.EvName.PlaceholderText = "Evidence Name";
-            this.EvName.Size = new System.Drawing.Size(365, 31);
+            this.EvName.Size = new System.Drawing.Size(403, 31);
             this.EvName.TabIndex = 0;
             // 
             // tabPage2
@@ -347,16 +347,26 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(2317, 1294);
+            this.tabPage2.Size = new System.Drawing.Size(2556, 1034);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Competency Explorer";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // LatexTable
+            // 
+            this.LatexTable.Location = new System.Drawing.Point(1134, 370);
+            this.LatexTable.Name = "LatexTable";
+            this.LatexTable.Size = new System.Drawing.Size(261, 27);
+            this.LatexTable.TabIndex = 28;
+            this.LatexTable.Text = "Build Latex Table ";
+            this.LatexTable.UseVisualStyleBackColor = true;
+            this.LatexTable.Click += new System.EventHandler(this.LatexTable_Click);
             // 
             // label5
             // 
             this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1360, 64);
+            this.label5.Location = new System.Drawing.Point(1500, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(186, 25);
             this.label5.TabIndex = 27;
@@ -375,19 +385,19 @@
             this.EvLeaderBoard.BackgroundColor = System.Drawing.SystemColors.Window;
             this.EvLeaderBoard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EvLeaderBoard.ColumnHeadersVisible = false;
-            this.EvLeaderBoard.Location = new System.Drawing.Point(1360, 92);
+            this.EvLeaderBoard.Location = new System.Drawing.Point(1500, 74);
             this.EvLeaderBoard.Name = "EvLeaderBoard";
             this.EvLeaderBoard.ReadOnly = true;
             this.EvLeaderBoard.RowHeadersVisible = false;
             this.EvLeaderBoard.RowHeadersWidth = 62;
             this.EvLeaderBoard.RowTemplate.Height = 33;
-            this.EvLeaderBoard.Size = new System.Drawing.Size(917, 401);
+            this.EvLeaderBoard.Size = new System.Drawing.Size(1011, 318);
             this.EvLeaderBoard.TabIndex = 26;
             // 
             // MappedComp
             // 
             this.MappedComp.AutoSize = true;
-            this.MappedComp.Location = new System.Drawing.Point(26, 513);
+            this.MappedComp.Location = new System.Drawing.Point(28, 416);
             this.MappedComp.Name = "MappedComp";
             this.MappedComp.Size = new System.Drawing.Size(254, 25);
             this.MappedComp.TabIndex = 25;
@@ -397,7 +407,7 @@
             // MissingCompStat
             // 
             this.MissingCompStat.AutoSize = true;
-            this.MissingCompStat.Location = new System.Drawing.Point(587, 513);
+            this.MissingCompStat.Location = new System.Drawing.Point(646, 416);
             this.MissingCompStat.Name = "MissingCompStat";
             this.MissingCompStat.Size = new System.Drawing.Size(248, 25);
             this.MissingCompStat.TabIndex = 24;
@@ -406,9 +416,9 @@
             // 
             // ScanForMissing
             // 
-            this.ScanForMissing.Location = new System.Drawing.Point(1019, 92);
+            this.ScanForMissing.Location = new System.Drawing.Point(1124, 74);
             this.ScanForMissing.Name = "ScanForMissing";
-            this.ScanForMissing.Size = new System.Drawing.Size(237, 34);
+            this.ScanForMissing.Size = new System.Drawing.Size(261, 27);
             this.ScanForMissing.TabIndex = 23;
             this.ScanForMissing.Text = "Scan";
             this.ScanForMissing.UseVisualStyleBackColor = true;
@@ -418,7 +428,7 @@
             // 
             this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 64);
+            this.label4.Location = new System.Drawing.Point(20, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 25);
             this.label4.TabIndex = 22;
@@ -437,32 +447,23 @@
             this.MissingComp.BackgroundColor = System.Drawing.SystemColors.Window;
             this.MissingComp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MissingComp.ColumnHeadersVisible = false;
-            this.MissingComp.Location = new System.Drawing.Point(17, 92);
+            this.MissingComp.Location = new System.Drawing.Point(20, 74);
             this.MissingComp.Name = "MissingComp";
             this.MissingComp.ReadOnly = true;
             this.MissingComp.RowHeadersVisible = false;
             this.MissingComp.RowHeadersWidth = 62;
             this.MissingComp.RowTemplate.Height = 33;
-            this.MissingComp.Size = new System.Drawing.Size(917, 401);
+            this.MissingComp.Size = new System.Drawing.Size(1011, 318);
             this.MissingComp.TabIndex = 21;
-            // 
-            // LatexTable
-            // 
-            this.LatexTable.Location = new System.Drawing.Point(1029, 459);
-            this.LatexTable.Name = "LatexTable";
-            this.LatexTable.Size = new System.Drawing.Size(237, 34);
-            this.LatexTable.TabIndex = 28;
-            this.LatexTable.Text = "Build Latex Table ";
-            this.LatexTable.UseVisualStyleBackColor = true;
-            this.LatexTable.Click += new System.EventHandler(this.LatexTable_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2325, 1332);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(2564, 1072);
             this.Controls.Add(this.Tabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "GSP Mapping Mate";
             this.Tabs.ResumeLayout(false);
