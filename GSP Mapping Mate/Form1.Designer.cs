@@ -354,9 +354,9 @@
             // 
             // LatexTable
             // 
-            this.LatexTable.Location = new System.Drawing.Point(1134, 370);
+            this.LatexTable.Location = new System.Drawing.Point(1124, 341);
             this.LatexTable.Name = "LatexTable";
-            this.LatexTable.Size = new System.Drawing.Size(261, 27);
+            this.LatexTable.Size = new System.Drawing.Size(261, 41);
             this.LatexTable.TabIndex = 28;
             this.LatexTable.Text = "Build Latex Table ";
             this.LatexTable.UseVisualStyleBackColor = true;
@@ -366,7 +366,7 @@
             // 
             this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1500, 51);
+            this.label5.Location = new System.Drawing.Point(1500, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(186, 25);
             this.label5.TabIndex = 27;
@@ -418,7 +418,7 @@
             // 
             this.ScanForMissing.Location = new System.Drawing.Point(1124, 74);
             this.ScanForMissing.Name = "ScanForMissing";
-            this.ScanForMissing.Size = new System.Drawing.Size(261, 27);
+            this.ScanForMissing.Size = new System.Drawing.Size(261, 41);
             this.ScanForMissing.TabIndex = 23;
             this.ScanForMissing.Text = "Scan";
             this.ScanForMissing.UseVisualStyleBackColor = true;
@@ -428,7 +428,7 @@
             // 
             this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 51);
+            this.label4.Location = new System.Drawing.Point(20, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 25);
             this.label4.TabIndex = 22;
