@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Tabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.RefreshData = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@
             this.ScanForMissing = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.MissingComp = new System.Windows.Forms.DataGridView();
+            this.NewEv = new System.Windows.Forms.Button();
             this.Tabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EvidenceGrid)).BeginInit();
@@ -82,6 +84,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.NewEv);
             this.tabPage1.Controls.Add(this.RefreshData);
             this.tabPage1.Controls.Add(this.EvidenceGrid);
             this.tabPage1.Controls.Add(this.label3);
@@ -210,6 +213,14 @@
             this.CompViewer.BackgroundColor = System.Drawing.SystemColors.Window;
             this.CompViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CompViewer.ColumnHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CompViewer.DefaultCellStyle = dataGridViewCellStyle1;
             this.CompViewer.Location = new System.Drawing.Point(1182, 110);
             this.CompViewer.Name = "CompViewer";
             this.CompViewer.ReadOnly = true;
@@ -456,6 +467,16 @@
             this.MissingComp.Size = new System.Drawing.Size(1011, 318);
             this.MissingComp.TabIndex = 21;
             // 
+            // NewEv
+            // 
+            this.NewEv.Location = new System.Drawing.Point(623, 46);
+            this.NewEv.Name = "NewEv";
+            this.NewEv.Size = new System.Drawing.Size(170, 34);
+            this.NewEv.TabIndex = 24;
+            this.NewEv.Text = "New Evidence";
+            this.NewEv.UseVisualStyleBackColor = true;
+            this.NewEv.Click += new System.EventHandler(this.NewEv_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -513,5 +534,6 @@
         private Label label5;
         private DataGridView EvLeaderBoard;
         private Button LatexTable;
+        private Button NewEv;
     }
 }

@@ -40,14 +40,15 @@ namespace GSP_Mapping_Mate
 
                 SelectedComp.Text = "X.X.X";
 
+                CompViewer.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 CompViewer.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 CompViewer.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 CompViewer.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
+                CompAssinged.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 CompAssinged.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 CompAssinged.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 CompAssinged.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
                 CompAssinged.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
 
@@ -186,7 +187,8 @@ namespace GSP_Mapping_Mate
                 int count = 0;
                 foreach (string ChildComp in CompDict[SelectedComp.Text].ChildComps)
                 {
-                    CompViewer.Rows.Add("         (" + alphabet[count] + ") " + ChildComp);
+                    CompViewer.Rows.Add("(" + alphabet[count] + ") " + ChildComp);
+                    CompViewer.Rows[CompViewer.Rows.Count - 1].Cells[0].Style.Padding = new Padding(30, 0, 0, 0);
                     count++;
                 }
             }
@@ -332,6 +334,7 @@ namespace GSP_Mapping_Mate
                         foreach (DataGridViewRow row in CompViewer.Rows)
                         {
                             CompAssinged.Rows.Add(row.Cells[0].Value.ToString());
+                            CompAssinged.Rows[CompAssinged.Rows.Count - 1].Cells[0].Style.Padding = new Padding(30, 0, 0, 0);
                         }
                     }
 
@@ -354,6 +357,7 @@ namespace GSP_Mapping_Mate
                             foreach (DataGridViewCell cell in CompViewer.SelectedCells)
                             {
                                 CompAssinged.Rows.Add(cell.Value.ToString());
+                                CompAssinged.Rows[CompAssinged.Rows.Count - 1].Cells[0].Style.Padding = new Padding(30, 0, 0, 0);
                             }
                         }
                         else //Thism eans we did find it so we don't need to add just append to the end
@@ -361,6 +365,7 @@ namespace GSP_Mapping_Mate
                             foreach (DataGridViewCell cell in CompViewer.SelectedCells)
                             {
                                 CompAssinged.Rows.Insert(RootIndex + 1, cell.Value.ToString());
+                                CompAssinged.Rows[RootIndex + 1].Cells[0].Style.Padding = new Padding(30, 0, 0, 0);
                             }
                         }
                     }
@@ -413,7 +418,7 @@ namespace GSP_Mapping_Mate
             Dictionary<string, List<string>> Order_Dict = new Dictionary<string, List<string>>();
             foreach (DataGridViewRow row in grid.Rows)
             {
-                if (row.Cells[0].Value.ToString()[0] != ' ' && Order_Dict.ContainsKey(row.Cells[0].Value.ToString()) == false)
+                if (row.Cells[0].Value.ToString()[0] != '(' && Order_Dict.ContainsKey(row.Cells[0].Value.ToString()) == false)
                 {
                     Order_Dict.Add(row.Cells[0].Value.ToString(), new List<string>());
                 }
@@ -422,13 +427,13 @@ namespace GSP_Mapping_Mate
             string CurrentRoot = "";
             foreach (DataGridViewRow row in grid.Rows)
             {
-                if (row.Cells[0].Value.ToString()[0] != ' ')
+                if (row.Cells[0].Value.ToString()[0] != '(')
                 {
                     CurrentRoot = row.Cells[0].Value.ToString();
                 }
 
 
-                if (row.Cells[0].Value.ToString()[0] == ' ')
+                if (row.Cells[0].Value.ToString()[0] == '(')
                 {
                     Order_Dict[CurrentRoot].Add(row.Cells[0].Value.ToString());
                 }
@@ -450,7 +455,12 @@ namespace GSP_Mapping_Mate
             {
                 grid.Rows.Add(key);
                 foreach (var value in Order_Dict[key])
+                {
                     grid.Rows.Add(value);
+                    grid.Rows[grid.Rows.Count - 1].Cells[0].Style.Padding = new Padding(30, 0, 0, 0);
+                }
+                    
+                    
             }
             RemoveDuplicate(grid);
         }
@@ -467,7 +477,7 @@ namespace GSP_Mapping_Mate
                 foreach (DataGridViewCell cell in CompAssinged.SelectedCells)
                 {
                     CompsToRemove.Add(cell.Value.ToString());
-                    if (cell.Value.ToString()[0] != ' ')
+                    if (cell.Value.ToString()[0] != '(')
                         Roots.Add(cell.Value.ToString());
                 }
 
@@ -519,7 +529,8 @@ namespace GSP_Mapping_Mate
                     int count = 0;
                     foreach (string ChildComp in CompDict[item].ChildComps)
                     {
-                        MissingComp.Rows.Add("         (" + alphabet[count] + ") " + ChildComp);
+                        MissingComp.Rows.Add("(" + alphabet[count] + ") " + ChildComp);
+                        MissingComp.Rows[MissingComp.Rows.Count - 1].Cells[0].Style.Padding = new Padding(30, 0, 0, 0);
                         count++;
                     }
                 }
@@ -582,6 +593,7 @@ namespace GSP_Mapping_Mate
 
                 }
                 RemovedIndex = RemovedIndex.Distinct().ToList();
+                RemovedIndex.Sort();
                 RemovedIndex.Reverse();
                 foreach (int i in RemovedIndex)
                 {
@@ -607,6 +619,14 @@ namespace GSP_Mapping_Mate
         private void LatexTable_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Coming Soon");
+        }
+
+        private void NewEv_Click(object sender, EventArgs e)
+        {
+            FileName.Clear();
+            CompAssinged.Rows.Clear();
+            EvName.Clear();
+            EvDesc.Clear();
         }
     }
 }
