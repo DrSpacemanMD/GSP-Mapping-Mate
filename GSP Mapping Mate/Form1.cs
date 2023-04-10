@@ -33,10 +33,13 @@ namespace GSP_Mapping_Mate
                 CompViewer.Columns.Add("Col1", "Name");
                 CompAssinged.Columns.Add("Col1", "Name");
                 MissingComp.Columns.Add("Col1", "Name");
+                CompTable.Columns.Add("Col1", "Competency");
 
                 EvLeaderBoard.Columns.Add("Col1", "Evidence Title");
                 EvLeaderBoard.Columns.Add("Col2", "Comptencies Mapped");
+                CompTable.Columns.Add("Col2", "Mapped Evidence");
                 EvLeaderBoard.ColumnHeadersVisible = true;
+                CompTable.ColumnHeadersVisible = true;
 
                 SelectedComp.Text = "X.X.X";
 
@@ -51,7 +54,8 @@ namespace GSP_Mapping_Mate
                 CompAssinged.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 CompAssinged.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-
+                EvLeaderBoard.Columns[1].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                EvLeaderBoard.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
 
 
@@ -509,13 +513,6 @@ namespace GSP_Mapping_Mate
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void ScanForMissing_Click(object sender, EventArgs e)
         {
             try
@@ -628,5 +625,70 @@ namespace GSP_Mapping_Mate
             EvName.Clear();
             EvDesc.Clear();
         }
+
+        private void BuildTable_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CompTable.Rows.Clear();
+                List<Evidence> Evidences = new List<Evidence>();
+
+                DirectoryInfo dinfo = new DirectoryInfo(@"EvidenceDatabase");
+                FileInfo[] Files = dinfo.GetFiles("*.bin");
+                foreach (FileInfo file in Files)
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    Stream stream = new FileStream(file.FullName, FileMode.Open, FileAccess.Read);
+                    Evidence Evidence = (Evidence)formatter.Deserialize(stream);
+                    Evidences.Add(Evidence);
+                    stream.Close();
+                }
+
+                foreach (var item in CompDict.Keys)
+                {
+                    List<string> EvNames = new List<string>();
+                    foreach (Evidence ev in Evidences)
+                    {
+                        foreach (KeyValuePair<string, List<string>> entry in ev.CompDict)
+                        {
+                            if (entry.Key == item + " " + CompDict[item].RootComp)
+                                EvNames.Add(ev.Name);
+                        }
+                    }
+
+                    CompTable.Rows.Add(item + " " + CompDict[item].RootComp, string.Join(Environment.NewLine, EvNames));
+
+                    int count = 0;
+                    foreach (string ChildComp in CompDict[item].ChildComps)
+                    {
+                        EvNames = new List<string>();
+                        foreach (Evidence ev in Evidences)
+                        {
+                            foreach (KeyValuePair<string, List<string>> entry in ev.CompDict)
+                            {
+                                foreach (string Child in entry.Value)
+                                {
+                                    if (Child == "(" + alphabet[count] + ") " + ChildComp)
+                                        EvNames.Add(ev.Name);
+                                }
+
+                            }
+                        }
+
+                        CompTable.Rows.Add("(" + alphabet[count] + ") " + ChildComp, string.Join(Environment.NewLine, EvNames));
+                        CompTable.Rows[CompTable.Rows.Count - 1].Cells[0].Style.Padding = new Padding(30, 0, 0, 0);
+                        count++;
+                    }
+                }
+                CompTable.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                CompTable.Columns[1].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                CompTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+}
     }
 }
