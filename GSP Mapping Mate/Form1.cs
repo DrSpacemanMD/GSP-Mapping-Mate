@@ -554,6 +554,8 @@ namespace GSP_Mapping_Mate
                 DirectoryInfo dinfo = new DirectoryInfo(@"EvidenceDatabase");
                 FileInfo[] Files = dinfo.GetFiles("*.bin");
                 List<String> CompMatched = new List<string>();
+
+                Dictionary<string, List<string>> RootTracker = new Dictionary<string, List<string>>();
                 foreach (FileInfo file in Files)
                 {
                     IFormatter formatter = new BinaryFormatter();
@@ -564,12 +566,21 @@ namespace GSP_Mapping_Mate
 
                     foreach (var RootComp in Evidence.CompDict.Keys)
                     {
-                        CompMatched.Add(RootComp);
+                        if (RootTracker.ContainsKey(RootComp)==false) { RootTracker.Add(RootComp, new List<string>()); }
+                        
                         foreach (var Comp in Evidence.CompDict[RootComp])
+                        {
                             CompMatched.Add(Comp);
+                            RootTracker[RootComp].Add(Comp);
+                        }
+                          
+                        if (CompDict[RootComp.Split(' ')[0]].ChildComps.Count == RootTracker[RootComp].Distinct().ToList().Count)
+                            CompMatched.Add(RootComp);
                     }
                     stream.Close();
                 }
+
+                
 
                 List<int> RemovedIndex = new List<int>();
                 foreach (string Str in CompMatched)
