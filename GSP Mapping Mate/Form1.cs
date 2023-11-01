@@ -29,6 +29,7 @@ namespace GSP_Mapping_Mate
                 f2 = new Form2();
                 f2.Form = this;
 
+                this.AutoSize = false;
 
                 CompViewer.Columns.Add("Col1", "Name");
                 CompAssinged.Columns.Add("Col1", "Name");

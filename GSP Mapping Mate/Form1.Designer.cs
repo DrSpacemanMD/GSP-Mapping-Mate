@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Tabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.NewEv = new System.Windows.Forms.Button();
@@ -53,6 +53,9 @@
             this.EvDesc = new System.Windows.Forms.TextBox();
             this.EvName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.BuildTable = new System.Windows.Forms.Button();
+            this.CompTable = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.EvLeaderBoard = new System.Windows.Forms.DataGridView();
             this.MappedComp = new System.Windows.Forms.Label();
@@ -60,18 +63,15 @@
             this.ScanForMissing = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.MissingComp = new System.Windows.Forms.DataGridView();
-            this.BuildTable = new System.Windows.Forms.Button();
-            this.CompTable = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
             this.Tabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EvidenceGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompAssinged)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompViewer)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CompTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EvLeaderBoard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MissingComp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompTable)).BeginInit();
             this.SuspendLayout();
             // 
             // Tabs
@@ -222,18 +222,17 @@
             this.CompViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompViewer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CompViewer.BackgroundColor = System.Drawing.SystemColors.Window;
             this.CompViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CompViewer.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CompViewer.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CompViewer.DefaultCellStyle = dataGridViewCellStyle1;
             this.CompViewer.Location = new System.Drawing.Point(1182, 110);
             this.CompViewer.Name = "CompViewer";
             this.CompViewer.ReadOnly = true;
@@ -378,6 +377,48 @@
             this.tabPage2.Text = "Competency Explorer";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 477);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 25);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Competency Table";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // BuildTable
+            // 
+            this.BuildTable.Location = new System.Drawing.Point(1166, 968);
+            this.BuildTable.Name = "BuildTable";
+            this.BuildTable.Size = new System.Drawing.Size(261, 41);
+            this.BuildTable.TabIndex = 29;
+            this.BuildTable.Text = "Build Competency Table";
+            this.BuildTable.UseVisualStyleBackColor = true;
+            this.BuildTable.Click += new System.EventHandler(this.BuildTable_Click);
+            // 
+            // CompTable
+            // 
+            this.CompTable.AllowUserToAddRows = false;
+            this.CompTable.AllowUserToDeleteRows = false;
+            this.CompTable.AllowUserToResizeColumns = false;
+            this.CompTable.AllowUserToResizeRows = false;
+            this.CompTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CompTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CompTable.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.CompTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CompTable.ColumnHeadersVisible = false;
+            this.CompTable.Location = new System.Drawing.Point(20, 505);
+            this.CompTable.Name = "CompTable";
+            this.CompTable.ReadOnly = true;
+            this.CompTable.RowHeadersVisible = false;
+            this.CompTable.RowHeadersWidth = 62;
+            this.CompTable.RowTemplate.Height = 33;
+            this.CompTable.Size = new System.Drawing.Size(2491, 438);
+            this.CompTable.TabIndex = 28;
+            // 
             // label5
             // 
             this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -472,55 +513,12 @@
             this.MissingComp.Size = new System.Drawing.Size(1011, 318);
             this.MissingComp.TabIndex = 21;
             // 
-            // BuildTable
-            // 
-            this.BuildTable.Location = new System.Drawing.Point(1166, 968);
-            this.BuildTable.Name = "BuildTable";
-            this.BuildTable.Size = new System.Drawing.Size(261, 41);
-            this.BuildTable.TabIndex = 29;
-            this.BuildTable.Text = "Build Competency Table";
-            this.BuildTable.UseVisualStyleBackColor = true;
-            this.BuildTable.Click += new System.EventHandler(this.BuildTable_Click);
-            // 
-            // CompTable
-            // 
-            this.CompTable.AllowUserToAddRows = false;
-            this.CompTable.AllowUserToDeleteRows = false;
-            this.CompTable.AllowUserToResizeColumns = false;
-            this.CompTable.AllowUserToResizeRows = false;
-            this.CompTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.CompTable.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.CompTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CompTable.ColumnHeadersVisible = false;
-            this.CompTable.Location = new System.Drawing.Point(20, 505);
-            this.CompTable.Name = "CompTable";
-            this.CompTable.ReadOnly = true;
-            this.CompTable.RowHeadersVisible = false;
-            this.CompTable.RowHeadersWidth = 62;
-            this.CompTable.RowTemplate.Height = 33;
-            this.CompTable.Size = new System.Drawing.Size(2491, 438);
-            this.CompTable.TabIndex = 28;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 477);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 25);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Competency Table";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(2564, 1072);
             this.Controls.Add(this.Tabs);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "GSP Mapping Mate";
@@ -532,9 +530,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.CompViewer)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CompTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EvLeaderBoard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MissingComp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompTable)).EndInit();
             this.ResumeLayout(false);
 
         }
